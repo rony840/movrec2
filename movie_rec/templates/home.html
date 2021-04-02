@@ -1,0 +1,226 @@
+{% extends "base.html" %}
+{% block content %}
+	<!-- Hero section -->
+	<section class="hero-section">
+		<div class="hero-slider owl-carousel">
+			<div class="hs-item">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="hs-text">
+								<p style="color:#fc0254;">
+									{% with messages = get_flashed_messages() %}
+    									{% if messages %}
+       										{% for message in messages %}
+            									{{ message }}
+											{% endfor %}
+    									{% endif %}
+									{% endwith %}
+								</p>
+								<h2><span>Discover </span>  new movies.</h2>
+								<p>Enter a movie title and get best <span style="color:#fc0254;"><strong>recommended</strong></span> movies based on its overview, genres, actors, and directors. </p>
+								
+								<form method="POST" action="">
+									{{ form.hidden_tag() }}
+									<div class="form-group">
+					                    {% if form.movie_title.errors %}
+					                        {{ form.movie_title(class="form-control form-control-lg is-invalid") }}
+					                        <div class="invalid-feedback">
+					                            {% for error in form.movie_title.errors %}
+					                                <span>{{ error }}</span>
+					                            {% endfor %}
+					                        </div>
+					                    {% else %}
+					                        {{ form.movie_title(class="form-control form-control-lg") }}
+					                    {% endif %}
+                					</div>
+
+                					<div class="form-group">
+               							{{ form.submit(class="btn site-btn") }}
+            						</div>
+								</form>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="hr-img">
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Hero section end -->
+
+	<!-- Trendin now section -->
+	<section class="concept-section spad">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8">
+					<div class="section-title">
+						<h2>Trending now, most popular movies</h2>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-3 col-sm-6">
+					<div class="concept-item">
+						<img src="{{posters[0]}}" alt="">
+						<h5>{{movies[0]}}</h5>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6">
+					<div class="concept-item">
+						<img src="{{posters[1]}}" alt="">
+						<h5>{{movies[1]}}</h5>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6">
+					<div class="concept-item">
+						<img src="{{posters[2]}}" alt="">
+						<h5>{{movies[2]}}</h5>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6">
+					<div class="concept-item">
+						<img src="{{posters[3]}}" alt="">
+						<h5>{{movies[3]}}</h5>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-3 col-sm-6">
+					<div class="concept-item">
+						<img src="{{posters[4]}}" alt="">
+						<h5>{{movies[4]}}</h5>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6">
+					<div class="concept-item">
+						<img src="{{posters[5]}}" alt="">
+						<h5>{{movies[5]}}</h5>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6">
+					<div class="concept-item">
+						<img src="{{posters[6]}}" alt="">
+						<h5>{{movies[6]}}</h5>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6">
+					<div class="concept-item">
+						<img src="{{posters[7]}}" alt="">
+						<h5>{{movies[7]}}</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Trendin now section end -->
+
+	<!-- How section -->
+	<section class="how-section spad set-bg" id="howitworks" data-setbg="../static/img/how-to-bg.jpg">
+		<div class="container text-white">
+			<div class="section-title">
+				<h2>How it works</h2>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="how-item">
+						<div class="hi-icon">
+							<img src="../static/img/icons/brain.png" alt="">
+						</div>
+						<h4>Content-Based Filtering</h4>
+						
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="how-item">
+						<div class="hi-icon">
+							<img src="../static/img/icons/pointer.png" alt="">
+						</div>
+						<h4>Collabarative Based Filtering</h4>
+						
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="how-item">
+						<div class="hi-icon">
+							<img src="../static/img/icons/smartphone.png" alt="">
+						</div>
+						<h4>Cosine Similarity</h4>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- How section end -->
+
+	<!-- Best rated section -->
+	<section class="concept-section spad" id="best-rated">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="section-title">
+						<h2>Best rated movies of all time</h2>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-3 col-sm-6">
+					<div class="concept-item">
+						<img src="../static/img/best-rated/1_image.jpg" alt="">
+						<h5>The Shawshank Redemption</h5>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6">
+					<div class="concept-item">
+						<img src="../static/img/best-rated/2_image.jpg" alt="">
+						<h5>Fight Club</h5>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6">
+					<div class="concept-item">
+						<img src="../static/img/best-rated/3_image.jpg" alt="">
+						<h5>The Dark Knight</h5>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6">
+					<div class="concept-item">
+						<img src="../static/img/best-rated/4_image.jpg" alt="">
+						<h5>Pulp Fiction</h5>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-3 col-sm-6">
+					<div class="concept-item">
+						<img src="../static/img/best-rated/5_image.jpg" alt="">
+						<h5>Inception</h5>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6">
+					<div class="concept-item">
+						<img src="../static/img/best-rated/6_image.jpg" alt="">
+						<h5>The Godfather</h5>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6">
+					<div class="concept-item">
+						<img src="../static/img/best-rated/7_image.jpg" alt="">
+						<h5>Interstellar</h5>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6">
+					<div class="concept-item">
+						<img src="../static/img/best-rated/8_image.jpg" alt="">
+						<h5>Forrest Gump</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Best rated section end -->
+{% endblock content %}

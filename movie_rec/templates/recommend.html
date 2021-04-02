@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% block content %}
+	<!-- Hero section -->
+	<section class="hero-section">
+		<div class="hero-slider owl-carousel">
+			<div class="hs-item">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="hs-text">
+								<h2><span>{{ movie_title.capitalize() }}</span></h2>
+								
+								<form method="POST" action="">
+									{{ form.hidden_tag() }}
+									<div class="form-group">
+					                    {% if form.movie_title.errors %}
+					                        {{ form.movie_title(class="form-control form-control-lg is-invalid") }}
+					                        <div class="invalid-feedback">
+					                            {% for error in form.movie_title.errors %}
+					                                <span>{{ error }}</span>
+					                            {% endfor %}
+					                        </div>
+					                    {% else %}
+					                        {{ form.movie_title(class="form-control form-control-lg") }}
+					                    {% endif %}
+                					</div>
+
+                					<div class="form-group">
+               							{{ form.submit(class="btn site-btn") }}
+            						</div>
+								</form>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<ul class="list-group" list-group-flush>
+								<li class="list-group-item" style="background-color: rgb(10, 24, 61);">
+									<h5 style="color:#fc0254;">MOVIEREC based on directors, actors, and genres</h5>
+								</li>
+								<li class="list-group-item" style="background-color: rgb(10, 24, 61);">
+									<h5 style="color:white;"><span style="color:#fc0254;">1&nbsp;&nbsp;&nbsp;</span>{{rec_movies[0].capitalize()}}</h5>
+								</li>
+								<li class="list-group-item" style="background-color: rgb(10, 24, 61);">
+									<h5 style="color:white;"><span style="color:#fc0254;">2&nbsp;&nbsp;&nbsp;</span>{{rec_movies[1].capitalize()}}</h5>
+								</li>
+								<li class="list-group-item" style="background-color: rgb(10, 24, 61);">
+									<h5 style="color:white;"><span style="color:#fc0254;">3&nbsp;&nbsp;&nbsp;</span>{{rec_movies[2].capitalize()}}</h5>
+								</li>
+								<li class="list-group-item" style="background-color: rgb(10, 24, 61);">
+									<h5 style="color:white;"><span style="color:#fc0254;">4&nbsp;&nbsp;&nbsp;</span>{{rec_movies[3].capitalize()}}</h5>
+								</li>
+								<li class="list-group-item" style="background-color: rgb(10, 24, 61);">
+									<h5 style="color:white;"><span style="color:#fc0254;">5&nbsp;&nbsp;&nbsp;</span>{{rec_movies[4].capitalize()}}</h5>
+								</li>
+								<li class="list-group-item" style="background-color: rgb(10, 24, 61);">
+									<h5 style="color:white;"><span style="color:#fc0254;">6&nbsp;&nbsp;&nbsp;</span>{{rec_movies[5].capitalize()}}</h5>
+								</li>
+								<li class="list-group-item" style="background-color: rgb(10, 24, 61);">
+									<h5 style="color:white;"><span style="color:#fc0254;">7&nbsp;&nbsp;&nbsp;</span>{{rec_movies[6].capitalize()}}</h5>
+								</li>
+								<li class="list-group-item" style="background-color: rgb(10, 24, 61);">
+									<h5 style="color:white;"><span style="color:#fc0254;">8&nbsp;&nbsp;&nbsp;</span>{{rec_movies[7].capitalize()}}</h5>
+								</li>
+								<li class="list-group-item" style="background-color: rgb(10, 24, 61);">
+									<h5 style="color:white;"><span style="color:#fc0254;">9&nbsp;&nbsp;&nbsp;</span>{{rec_movies[8].capitalize()}}</h5>
+								</li>
+								<li class="list-group-item" style="background-color: rgb(10, 24, 61);">
+									<h5 style="color:white;"><span style="color:#fc0254;">10&nbsp;&nbsp;&nbsp;</span>{{rec_movies[9].capitalize()}}</h5>
+								</li>
+								<li class="list-group-item" style="background-color: rgb(10, 24, 61);">
+									<h5 style="color:white;"><span style="color:#fc0254;">11&nbsp;&nbsp;&nbsp;</span>{{rec_movies[10].capitalize()}}</h5>
+								</li>
+								<li class="list-group-item" style="background-color: rgb(10, 24, 61);">
+									<h5 style="color:white;"><span style="color:#fc0254;">12&nbsp;&nbsp;&nbsp;</span>{{rec_movies[11].capitalize()}}</h5>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Hero section end -->
+{% endblock content %}
